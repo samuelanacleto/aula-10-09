@@ -57,11 +57,52 @@ public class teste {
     	system.out.println("reprovado");
     }
 
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+package banco;
 
+public class conta {
+	private double numero;
+	private double saldo;
+	private double limite;
+	private String nome;
+	
+	conta (double numero,double saldo,double limite,String nome){
+	this.numero=numero;
+	this.saldo=saldo;
+	this.limite=limite; }
+	
+	public boolean saca(double valor){
+		if (this.saldo>=valor){
+			this.saldo=this.saldo-valor;
+			return true;}
+	
+	else
+		   return false;
+	}
+		
+	
+	public void deposita (double valor){
+	this.saldo=this.saldo+valor;
+	
 
+}}
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+package banco;
 
+public class teste {
 
+	public static void main(String[] args) {
+		conta c1 = new conta(9000,1000.00,0.00,"Pedro de Alcantara");
+		
+		c1.deposita(1000);
+		
+		if (c1.saca(2500)==true)
+			System.out.println("Saque realizado!");
+		else
+			System.out.println("Limite insuficiente!");
 
+	}
 
+}
